@@ -1,0 +1,20 @@
+113. 
+
+object to array!!!
+
+       state = {
+            ingredients: {
+                salad: 1,
+                bacon: 1,
+                cheese: 2,
+                meat: 2
+            }
+        }
+
+---------------------------------------
+
+  let transformedIngredients = Object.keys( props.ingredients ).map( igKey => {
+        return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
+            return <BurgerIngredient key={igKey + i} type={igKey} />;
+        } );
+    } )
